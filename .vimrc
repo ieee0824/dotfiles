@@ -42,6 +42,9 @@
  NeoBundle 'chase/vim-ansible-yaml'
  NeoBundle 'tpope/vim-rails'
  NeoBundle 'justmao945/vim-clang'
+ NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'kmnk/vim-unite-giti'
+ NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
