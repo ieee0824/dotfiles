@@ -39,6 +39,7 @@
 
  NeoBundle 'fatih/vim-go'
  NeoBundle 'sonictemplate-vim'
+ NeoBundle 'chase/vim-ansible-yaml'
 
 call neobundle#end()
 
