@@ -19,5 +19,3 @@ fi
 echo "NeoBundleInstall"
 vim +NeoBundleInstall +qall
 
-
-

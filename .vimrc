@@ -37,22 +37,18 @@
  " molokai
  NeoBundle 'tomasr/molokai'
 
- NeoBundle 'Shougo/unite.vim'
- NeoBundle 'ujihisa/unite-colorscheme'
- call neobundle#end()
+ NeoBundle 'fatih/vim-go'
+ NeoBundle 'sonictemplate-vim'
+
+call neobundle#end()
 
 
- " default color koehler
- colorscheme koehler
- if &term =~ "xterm-256color" || "screen-256color"
-   set t_Co=256
-   set t_Sf=[3%dm
-   set t_Sb=[4%dm
- elseif &term =~ "xterm-color"
-   set t_Co=8
-   set t_Sf=[3%dm
-   set t_Sb=[4%dm
- endif
+ filetype off
+ filetype plugin indent off
+ set runtimepath+=$GOROOT/misc/vim
+ filetype plugin indent on
+ syntax on
+ exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+ set completeopt=menu,preview
 
- syntax enable
- hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+ colorscheme molokai
