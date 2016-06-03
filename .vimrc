@@ -40,6 +40,8 @@
  NeoBundle 'fatih/vim-go'
  NeoBundle 'sonictemplate-vim'
  NeoBundle 'chase/vim-ansible-yaml'
+ NeoBundle 'tpope/vim-rails'
+ NeoBundle 'justmao945/vim-clang'
 
 call neobundle#end()
 
@@ -53,3 +55,9 @@ call neobundle#end()
  set completeopt=menu,preview
 
  colorscheme molokai
+
+ " set clang options for vim-clang
+ let g:clang_c_options = '-std=c11'
+ let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
+
+
