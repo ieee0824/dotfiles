@@ -45,6 +45,9 @@
  NeoBundle 'scrooloose/nerdtree'
 " NeoBundle 'kmnk/vim-unite-giti'
  NeoBundle 'tpope/vim-fugitive'
+ NeoBundle 'plasticboy/vim-markdown'
+ NeoBundle 'kannokanno/previm'
+ NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
 
@@ -63,4 +66,8 @@ call neobundle#end()
  let g:clang_c_options = '-std=c11'
  let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 
-
+" key map
+nnoremap <Left> <Esc><C-w>h
+nnoremap <Right> <Esc><c-w>l
+nnoremap <Up> <Esc><c-w>k
+nnoremap <Down> <Esc><c-w>j
