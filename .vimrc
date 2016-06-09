@@ -50,7 +50,7 @@
  NeoBundle 'tyru/open-browser.vim'
  NeoBundle 'elzr/vim-json'
  NeoBundle 'Shougo/neocomplete.vim'
-
+ NeoBundle 'rhysd/vim-crystal'
 call neobundle#end()
 
 
@@ -73,6 +73,11 @@ nnoremap <Left> <Esc><C-w>h
 nnoremap <Right> <Esc><c-w>l
 nnoremap <Up> <Esc><c-w>k
 nnoremap <Down> <Esc><c-w>j
+
+nnoremap <S-Left> <Esc>:bp<CR>
+nnoremap <S-Right> <Esc>:bn<CR>
+nnoremap <S-Up> <Esc>:ls<CR>
+nnoremap <S-Down> <Esc>:ls<CR>:b<Space>
 
 " show hiddenfiles
 let NERDTreeShowHidden=1
@@ -143,9 +148,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
