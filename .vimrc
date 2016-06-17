@@ -207,3 +207,5 @@ let g:syntastic_mode_map = {
       \ }
 
 
+set tabstop=4
+set shiftwidth=4
