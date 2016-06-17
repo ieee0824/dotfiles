@@ -51,6 +51,10 @@
  NeoBundle 'elzr/vim-json'
  NeoBundle 'Shougo/neocomplete.vim'
  NeoBundle 'rhysd/vim-crystal'
+ NeoBundle 'mattn/jscomplete-vim'
+ NeoBundle 'myhere/vim-nodejs-complete'
+ NeoBundle 'pangloss/vim-javascript'
+ NeoBundle 'scrooloose/syntastic'
 call neobundle#end()
 
 
@@ -177,3 +181,29 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let g:neocomplete#sources#omni#input_patterns.go = '\h\w\.\w*'
+
+" node setting
+:setl omnifunc=jscomplete#CompleteJS
+:setl omnifunc=jscomplete#CompleteJS
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+let g:neocomplcache_omni_functions.javascript = 'nodejscomplete#CompleteJS'
+let g:node_usejscomplete = 1
+
+let g:syntastic_check_on_open=0 "ファイルを開いたときはチェックしない
+let g:syntastic_check_on_save=1 "保存時にはチェック
+let g:syntastic_check_on_wq = 0 " wqではチェックしない
+let g:syntastic_auto_loc_list=1 "エラーがあったら自動でロケーションリストを開く
+let g:syntastic_loc_list_height=6 "エラー表示ウィンドウの高さ
+set statusline+=%#warningmsg# "エラーメッセージの書式
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_javascript_checkers = ['eslint'] "ESLintを使う
+let g:syntastic_mode_map = {
+      \ 'mode': 'active',
+      \ 'active_filetypes': ['javascript'],
+      \ 'passive_filetypes': []
+      \ }
+
+
